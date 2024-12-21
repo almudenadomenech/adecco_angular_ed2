@@ -1,0 +1,154 @@
+
+
+
+@if(book) {
+  <div class="mt-5 text-center">
+    <!-- Recomendable imágenes cuadradas por ejemplo 500x500 -->
+    <img
+    class="d-block mx-auto mb-4 rounded-circle"
+    [src]="'http://localhost:3000/uploads/' + book.author.photoUrl" alt="author"
+    style="max-width:150px;">
+
+    <h1 class="display-5 fw-bold text-body-emphasis">{{book.title}} {{book.price}}
+    </h1>
+    <div class="col-lg-6 mx-auto">
+      <h4>{{book.editorial.name}}</h4>
+      <p class="lead mb-4">{{book.numPages}}</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3"
+          [routerLink]="['/books', book.id, 'update']">
+          Editar
+        </button>
+        <a type="button" href="/assets/pdf/documento.pdf" target="_blank" class="btn btn-outline-secondary btn-lg px-4">Descargar libro</a>
+        <button class="btn btn-outline-secondary btn-lg px-4" (click)="downloadFile()">Descargar App</button>
+
+      </div>
+    </div>
+  </div>
+}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <h2 class="mt-5">Reservas</h2>
+
+      <table class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Fecha inicio</th>
+            <th scope="col">Fecha fin</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(reservation of reservations; track reservation.id) {
+          <tr>
+            <td>{{reservation.id}}</td>
+            <td>{{reservation.startDate}}</td>
+            <td>{{reservation.endDate}}</td>
+            <td>{{reservation.price}}</td>
+            <td>
+              @if (reservation.user) {
+                <span class="badge text-bg-success">{{reservation.user.email}}</span>
+              } @else {
+                <span class="badge text-bg-danger">Sin usuario</span>
+              }
+            </td>
+            <td>
+              <button class="btn btn-success me-2" [routerLink]="['/reservations', reservation.id, 'detail']">
+                Ver
+              </button>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h2 class="mt-5">Valoraciones</h2>
+
+      <!-- Listado de comentarios que ya existen en el libro -->
+      <div>
+        <ul class="list-unstyled">
+          @for (rating of ratings; track rating.id) {
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+
+                @if (rating.user?.photoUrl) {
+                  <img class="bd-placeholder-img" style="max-width:100px;"
+                  [src]="'http://localhost:3000/uploads/' + rating.user?.photoUrl">
+                } @else {
+                  <img class="bd-placeholder-img" src="https://placehold.co/100">
+                }
+
+
+                <div class="col-lg-8">
+                  <h6 class="mb-0">
+
+
+                    <ngb-rating [(rate)]="rating.score" [readonly]="true" [max]="5">
+                      <ng-template let-fill="fill" let-index="index">
+                        <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
+                      </ng-template>
+                    </ngb-rating>
+
+                    {{rating.createdDate | date:'dd/MM/yyyy'}}
+                  </h6>
+
+                  <small class="text-body-secondary">{{rating.comment}}</small>
+                </div>
+              </a>
+            </li>
+          }
+
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-6">
+      <h2 class="mt-5">Añade un comentario</h2>
+
+      <!-- Formulario para crear un nuevo comentario -->
+      <form [formGroup]="ratingForm" (ngSubmit)="save()">
+
+       <!-- <div class="input-group mb-3">
+          <span class="input-group-text">
+            <i class="bi bi-star-fill fs-3" style="color:#ffb900;"></i>
+          </span>
+          <div class="form-floating">
+            <input type="number" class="form-control" id="score"
+            placeholder="0-5" formControlName="score" max="5" min="0" step="1">
+            <label for="score">Puntuación</label>
+          </div>
+        </div>-->
+
+        <div class="mb-3">
+          <ngb-rating  formControlName="score" [max]="5">
+            <ng-template let-fill="fill" let-index="index">
+              <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
+            </ng-template>
+          </ngb-rating>
+        </div>
+
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a comment here"
+          id="comment" formControlName="comment" style="min-height:150px;"></textarea>
+          <label for="comment">Comentario de texto</label>
+        </div>
+
+        <button class="w-100 btn btn-success btn-lg" type="submit">Añadir comentario</button>
+      </form>
+    </div>
+  </div>
+</div>
