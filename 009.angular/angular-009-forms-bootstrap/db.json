@@ -1,0 +1,119 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "producto 1 modificado",
+      "price": 50,
+      "available": true,
+      "publishDate": {
+        "year": 2024,
+        "month": 2,
+        "day": 5
+      },
+      "manufacturer": {
+        "id": "1",
+        "name": "FilaMotor",
+        "year": 2012,
+        "images": [
+          "https://picsum.photos/id/944/900/500",
+          "https://picsum.photos/id/1011/900/500",
+          "https://picsum.photos/id/984/900/500"
+        ]
+      },
+      "categories": [
+        {
+          "id": 1,
+          "name": "Bebidas"
+        },
+        {
+          "id": 2,
+          "name": "Carne"
+        }
+      ]
+    },
+    {
+      "id": 0,
+      "title": "prueba de fechas",
+      "price": 34,
+      "available": true,
+      "publishDate": {
+        "year": 2024,
+        "month": 2,
+        "day": 29
+      },
+      "manufacturer": {
+        "id": "2",
+        "name": "Ford",
+        "year": 1960,
+        "images": [
+          "https://picsum.photos/id/944/900/500",
+          "https://picsum.photos/id/1011/900/500",
+          "https://picsum.photos/id/984/900/500"
+        ]
+      },
+      "categories": []
+    }
+  ],
+  "manufacturers": [
+    {
+      "id": "1",
+      "name": "FilaMotor",
+      "year": 2012,
+      "images": [
+        "https://picsum.photos/id/944/900/500",
+        "https://picsum.photos/id/1011/900/500",
+        "https://picsum.photos/id/984/900/500"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ford",
+      "year": 1960,
+      "images": [
+        "https://picsum.photos/id/944/900/500",
+        "https://picsum.photos/id/1011/900/500",
+        "https://picsum.photos/id/984/900/500"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Tesla",
+      "year": 2003,
+      "images": [
+        "https://picsum.photos/id/944/900/500",
+        "https://picsum.photos/id/1011/900/500",
+        "https://picsum.photos/id/984/900/500"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "BMW",
+      "year": 1950,
+      "images": [
+        "https://picsum.photos/id/944/900/500",
+        "https://picsum.photos/id/1011/900/500",
+        "https://picsum.photos/id/984/900/500"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Mercedes",
+      "year": 1950,
+      "images": [
+        "https://picsum.photos/id/944/900/500",
+        "https://picsum.photos/id/1011/900/500",
+        "https://picsum.photos/id/984/900/500"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Audi",
+      "year": 1950,
+      "images": [
+        "https://picsum.photos/id/944/900/500",
+        "https://picsum.photos/id/1011/900/500",
+        "https://picsum.photos/id/984/900/500"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+
+<!-- if: Si existe y tiene valor mayor que 0 la variable contador se muestra -->
+@if (contador && contador > 0) {
+  <div [ngStyle]="getCounterStyle()">{{contador}}</div>
+}
+
+<!-- 3 botones: incrementar, decrementar, resetear -->
+<button (click)="incrementar()">Incrementar contador</button>
+<button (click)="decrementar()">Decrementar contador</button>
+<button [disabled]="!contador" (click)="resetear()">Resetear contador</button>
