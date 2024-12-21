@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 1</title>
+</head>
+<body>
+    
+    <h1> Formulario Básico </h1>
+
+    <!-- action= especificar la URL a las que se envían los datos     
+        method= especificar el método HTTP para enviar los datos (get/post)-->
+    <form action="/backend" method="post">
+        <!-- div = utilizar como un contenedor o división en HTML24        proporciona estructura y diseño a la página web   
+    -->
+        <div>
+            <label for="nombre"> Nombre: </label>
+            <input type="text" name="nombre" id="nombre" >
+        </div>
+
+        <div>
+            <label for="telefono"> Telefono móvil: </label>
+            <input type="text" name="telefono" id="telefono">
+        </div>
+
+        <div>
+            <label for="nif"> NIF/DNI: </label>
+            <input type="text" name="nif" id="nif" placeholder="56789687H">
+        </div>
+
+        <div>
+            <label for="email"> Correo electrónico: </label>
+            <input type="email" name="email" id="email" placeholder="usuario1@gmail.com">
+        </div>
+
+        <div>
+            <label for="contrasena"> Contraseña: </label>
+            <input type="password" name="contrasena" id="contrasena">
+        </div>
+
+        <div>
+            <label for="salary"> Salario: </label>
+            <input type="number" name="salary" id="salary" step="200">
+        </div>
+
+        <div>
+            <label for="weight"> Peso(kg) </label>
+            <input type="number" name="weight" id="weight" step="0.50">
+        </div>
+
+        <div>
+            <label for="height"> Altura(cm) </label>
+            <input type="number" name="height" id="height" step="0.50" min="50" max="240" > cm
+        </div>
+
+        <div>
+            <label for="bio"> Biografía: </label>
+            <textarea name="bio" id="bio" rows="10" cols="50" minlength="10" maxlength="100"></textarea>
+        </div>
+
+        <div>
+            <label> Género: </label>
+        </div>
+        <div>
+            <input type="radio" id="male" name="genero" value="male">
+            <label for="male"> Masculino </label>
+        </div>
+        <div>
+            <input type="radio" id="female" name="genero" value="female">
+            <label for="female"> Femenino </label>
+        </div>
+        <div>
+            <input type="radio" id="other" name="genero" value="other">
+            <label for="other"> Otro </label>
+        </div>
+
+        <div>
+            <label for="state"> Comunidad Autónoma: </label>
+            <select name="state" id="state">
+                <option value="m"> Madrid </option>
+                <option value="c"> Cataluña </option>
+                <option value="a"> Andalucía </option>
+                <option value="g"> Galicia </option>
+            </select>
+        </div>
+
+        <div>
+            <label for="comentarios"> Comentarios: </label>
+            <textarea name="comentarios" id="comentarios" cols="60" rows="3"></textarea>
+        </div>
+
+        <div>
+            <label for="birthday"> Fecha de nacimiento: </label>
+            <input type="date" id="birthday" name=" birthday" 
+            min="2010-01-01" max="2023-12-31">
+        </div>
+
+        <div>
+            <label for="courseDateTime"> Fecha de comienzo del curso de Angular</label>
+            <input type="datetime-local" id="courseDateTime" name="courseDateTime">
+        </div>
+
+        <div>
+            <input type="checkbox" id="terms" name="terms" required>
+            <label for="terms"> Acepta nuestra política de privacidad </label>
+        </div>
+
+        <div>
+            <button type="submit">Enviar </button>
+        </div>
+
+    </form>
+
+
+</body>
+</html>

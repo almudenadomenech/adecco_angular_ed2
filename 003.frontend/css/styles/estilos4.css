@@ -1,0 +1,30 @@
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: blue;
+}
+
+.contenedor{
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+}
+
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+
+.contenedor {
+    background-image: url('codigo.jpg');
+    background-size: cover;
+}
+
+
+
+

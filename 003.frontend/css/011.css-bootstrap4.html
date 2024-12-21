@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <style>
+            .bg-welcome{
+                background-image: url('black_friday.jpg');
+                background-position: center;
+                background-size: cover;
+                padding-top: 250px;
+                padding-bottom:250px;
+            }
+            h1 {
+                font-size: 50px;
+                font-weight: bold;
+                padding: 20px;
+            }
+            .navbar-brand{
+            padding-left: 10px;
+            }
+        </style>
+    </head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <img src="logo_d.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+
+            <a class="navbar-brand" href="010.css-bootstrap3.html">Tienda de Ropa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Comprar
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Mujer</a></li>
+                            <li><a class="dropdown-item" href="#">Hombre</a></li>
+                            <li><a class="dropdown-item" href="#">Niños</a></li>
+                            <li><a class="dropdown-item" href="#">Productos con descuento</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-welcome text-center"></div>
+    <h1 class="text-center"> ¡No te pierdas las ofertas de Black Friday!🙌 </h1>
+
+    <!-- Viene de Forms/layout
+    https://getbootstrap.com/docs/5.3/forms/layout/? -->
+    <form class="row g-3" action="/backend" method="post">
+        <div class="col-md-6">
+            <label for="inputName" class="form-label">Nombre: </label>
+            <input type="text" class="form-control" id="inputName">
+        </div>
+        <div class="col-md-6">
+            <label for="inputLastname" class="form-label"> Apellido: </label>
+            <input type="text" class="form-control" id="inputLastname">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email: </label>
+            <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password: </label>
+            <input type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Dirección:</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Calle Corazón de María #68">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Dirección 2:</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, estudio, piso, chalet...">
+        </div>
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Ciudad:</label>
+            <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-4">
+            <label for="inputState" class="form-label">Comunidad Autónoma</label>
+            <select id="inputState" class="form-select">
+                <option selected>Selecciona...</option>
+                <option value="m"> Madrid </option>
+                <option value="c"> Cataluña </option>
+                <option value="a"> Andalucía </option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Código postal:</label>
+            <input type="text" class="form-control" id="inputZip">
+        </div>
+
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Estado civil: </legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  Casado
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  Soltero
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                <label class="form-check-label" for="gridRadios3">
+                  Divorciado
+                </label>
+              </div>
+            </div>
+          </fieldset>
+
+
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Acepto los términos y condiciones. Acepto recibir correos electrónicos de la empresa.
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
